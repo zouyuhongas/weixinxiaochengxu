@@ -1,0 +1,38 @@
+/* 轮播图 开始 */
+.index_swiper swiper {
+  height: 340rpx;
+}
+/* 轮播图 结束 */
+/* 导航 开始 */
+.index_nav {
+  display: flex;
+}
+.index_nav navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+/* 导航 结束 */
+/* 楼层 开始 */
+.index_floor .floor_group .floor_group_content {
+  /* padding: 10rpx; */
+  /* 清除浮动 */
+  overflow: hidden;
+  /* 后四个超链接  */
+}
+.index_floor .floor_group .floor_group_content navigator {
+  float: left;
+  width: 33.33%;
+  border-left: 5rpx solid #fff;
+  border-right: 5rpx solid #fff;
+}
+.index_floor .floor_group .floor_group_content navigator:nth-last-child(-n + 4) {
+  /* 原图的宽 / 原图的高 = 变化后的宽 / 变化后的高 ? */
+  height: 207.97413793rpx;
+}
+.index_floor .floor_group .floor_group_content navigator:nth-last-child(-n + 4) image {
+  height: 100%;
+}
+.index_floor .floor_group .floor_group_content navigator:nth-last-child(-n + 2) {
+  border-top: 5rpx solid #fff;
+}
+/* 楼层 结束 */

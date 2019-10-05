@@ -1,0 +1,1 @@
+<button plain type="primary" style="width:80%;margin:10rpx auto;"  open-type="getUserInfo" bindgetuserinfo="handleGetuserinfo" >授权</button>

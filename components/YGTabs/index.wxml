@@ -1,0 +1,16 @@
+<view class="ygtabs">
+  <view class="ygtabs_title">
+    <view class="title_item {{currentIndex===index?'active':''}} "
+    wx:for="{{titleList}}"
+    wx:key="id"
+    bindtap="handleTap"
+    data-index="{{index}}"
+    >
+    {{item.text}}
+  </view>
+  </view>
+  <view class="ygtabs_content">
+    <slot></slot>
+  </view>
+
+</view>

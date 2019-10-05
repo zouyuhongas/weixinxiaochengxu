@@ -1,0 +1,6 @@
+<view class="vv" data-dd="vv"  bindtap="handleTap" >
+  vv
+  <text class="txt" data-dd="txt">
+    txt
+  </text>
+</view>

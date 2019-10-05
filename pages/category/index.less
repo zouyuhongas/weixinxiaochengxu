@@ -1,0 +1,63 @@
+.cates_view{
+  /* 
+  height:屏幕的高度  -  头部搜索框的高度(45rpx) - 底部tabbar(45rpx)
+  让less 不要编译某段代码
+  height:100% 已经去除了 tabbar的高度了！！ 
+  100vh 100vw 
+  vw =  viewport width
+  vh =  viewport height 
+  约定了 100vw 等于屏幕的宽度
+  约定了 100vh 等于屏幕的高度
+   */
+  height: ~'calc(100vh - 90rpx )';
+  overflow: hidden;
+
+  display: flex;
+} 
+
+.menu_group{
+  /* 子项的高度和父项一样高度 */
+  width: 160rpx;
+  .menu_item{
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+  }
+  .active{
+    color: var(--themeColor);
+    /* currentColor == 当前字体的颜色 */
+    border-left: 5rpx solid currentColor;
+  }
+}
+.goods_list{
+  /* width: ~'calc(100vw - 160rpx )'; */
+  /* 设置子项占父项的剩下的宽度  */
+  flex: 1;
+  .goods_group{
+    .goods_group_title{
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30rpx;
+      .group_title{
+        margin-left: 20rpx;
+        margin-right: 20rpx;
+      }
+    }
+    .goods_group_content{
+      display: flex;
+      flex-wrap: wrap;
+      .goods_item{
+        width: 33.33%;
+        text-align: center;
+        image{
+          width: 60%;
+        }
+        .item_name{}
+      }
+    }
+  }
+}

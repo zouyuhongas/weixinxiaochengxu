@@ -1,0 +1,38 @@
+<SearchInput></SearchInput>
+
+<view class="cates_view">
+    <scroll-view scroll-y class="menu_group">
+        <view class="menu_item {{currentIndex===index?'active':''}} "
+        wx:for="{{menuList}}"
+        wx:key="*this"
+        bindtap="handleMenuTap"
+        data-index="{{index}}"
+        >{{item}}</view>
+    </scroll-view>
+    <scroll-view scroll-y scroll-top="{{scrollTop}}" class="goods_list">
+        <view class="goods_group"
+        wx:for="{{goodsList}}"
+        wx:for-index="index1"
+        wx:for-item="item1"
+        wx:key="index1"
+        >
+        <view class="goods_group_title">
+            <text class="separator">/</text>
+            <text class="group_title">{{item1.cat_name}}</text>
+            <text class="separator">/</text>
+        </view>
+        <view class="goods_group_content">
+            <navigator class="goods_item"
+            wx:for="{{item1.children}}"
+            wx:for-index="index2"
+            wx:for-item="item2"
+            wx:key="cat_id"
+            url="/pages/goods_list/index?cid={{item2.cat_id}}" 
+            >
+            <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+            <view class="item_name">{{item2.cat_name}}</view>
+        </navigator>
+        </view>
+        </view>
+    </scroll-view>
+</view>

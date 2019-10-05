@@ -1,0 +1,17 @@
+.ygtabs{}
+.ygtabs_title{
+  display: flex;
+  height: 90rpx;
+}
+.ygtabs_title .title_item{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.ygtabs_title .title_item.active{
+  color: var(--themeColor);
+  border-bottom: 1rpx solid currentColor;
+}
+.ygtabs_content{}

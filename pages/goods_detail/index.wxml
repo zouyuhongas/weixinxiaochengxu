@@ -1,0 +1,85 @@
+<view class="goods_detail">
+  <!-- 轮播图 开始 -->
+  <view class="gd_swiper">
+    <!-- 
+      原图的宽度 / 原图的高度  = 变化后的图片的宽度  /  要设置的图片的高度
+     -->
+    <swiper
+    circular
+    autoplay
+    indicator-dots
+    >
+      <swiper-item
+      wx:for="{{goodsObj.pics}}"
+      wx:key="pics_id"
+      bindtap="handleImagePreview"
+      data-current="{{item.pics_mid_url}}"
+      >
+      <!-- 
+        aspectFit 保持纵横比缩放图片，使图片的长边能完全显示出来。
+        aspectFill  保持纵横比缩放图片，使图片的短边能完全显示出来。
+        
+       -->
+        <image
+ 
+         mode="aspectFit" src="{{item.pics_mid_url}}" ></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 结束 -->
+  <!-- 价格 开始 -->
+  <view class="detail_price">
+    ￥{{goodsObj.goods_price}}
+  </view>
+  <!-- 价格 结束 -->
+  <view class="detail_name">
+    
+    <view class="detail_name_wrap">
+        {{goodsObj.goods_name}}
+    </view>
+    <view bindtap="handleItemCollect" class="detail_name_collect">
+      <text class="iconfont {{isCollect===true?'icon-shoucang1':'icon-shoucang'}}"></text>
+      <view>
+        收藏
+      </view>
+    </view>
+  </view>
+  <!-- 图文详情 开始 -->
+  <view class="detail_info">
+    <view class="detail_info_title">图文详情</view>
+    <view class="detail_info_content">
+      <rich-text
+      nodes="{{goodsObj.goods_introduce}}"
+      ></rich-text>
+    </view>
+
+  </view>
+  <!-- 图文详情 结束 -->
+
+  <!-- 底部 bottom 工具栏 开始 -->
+  <view class="btm_tool">
+    <view class="tool_item">
+      <button open-type="contact" ></button>
+      <text class="iconfont icon-kefu"></text>
+      <view class="tool_name">客服</view>
+    </view>
+    <view class="tool_item">
+        <button open-type="share" ></button>
+      <text class="iconfont icon-yixianshi-"></text>
+      <view class="tool_name">分享</view>
+    </view>
+    <navigator class="tool_item" open-type="switchTab" url="/pages/cart/index" >
+      <text class="iconfont icon-gouwuche"></text>
+      <view class="tool_name">购物车</view>
+    </navigator>
+    <view 
+    bindtap="handleCartAdd"
+    class="tool_item btn_cart">
+      加入购物车
+    </view>
+    <view class="tool_item btn_buy">
+      立即购买
+    </view>
+  </view>
+  <!-- 底部 工具栏 结束 -->
+</view>
